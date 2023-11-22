@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Orange Company Expansion",
+        "image": "orange-expansion.jpg",
+        "description": "Orange Company announces a significant expansion plan to reach new markets and enhance customer satisfaction."
+    },
+    {
+        "title": "Product Launch Event",
+        "image": "product-launch.jpg",
+        "description": "Exciting news! Orange Company is gearing up for a grand product launch event showcasing innovative solutions for our customers."
+    },
+    {
+        "title": "Employee Recognition Program",
+        "image": "employee-recognition.jpg",
+        "description": "We are proud to recognize the hard work and dedication of our employees. Stay tuned for the Employee of the Month announcement!"
+    }
+    // Add more news articles as needed
+]
