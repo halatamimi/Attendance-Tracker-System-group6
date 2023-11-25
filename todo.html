@@ -35,7 +35,10 @@
                 </a></li>
       
       
-              <li><a class="link_side" href="logout.html" class="logout">
+              <li><a class="link_side" class="logout" onclick="()=>
+                localStorage.clear();
+                window.location.replace('loginPage.html');
+                ">
                   <i class="fas fa-sign-out-alt fas"></i>
                   <span class="nav-item">Log out</span>
                 </a></li>
