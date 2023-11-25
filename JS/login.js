@@ -58,14 +58,14 @@ function onclick_function() {
         if(email===adminEmail && password===adminPassword)
         {
             //admin
-            //window.location.assign('');
+            window.location.assign('Add-trineers.html');
             alert('admin');
             window.sessionStorage.setItem(adminEmail,adminPassword);
         }
         else 
         {
             //not an admin->user,someOne else 
-            // window.location.assign('');
+             window.location.assign('trainees.html');
             //check if the email exist
             if(isKeyExist(email))
             {
