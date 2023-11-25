@@ -257,7 +257,7 @@ localStorage.setItem('tableData',updatesol);
 
  }
  function addabs(x){
-  let addabs=document.getElementById(`hamzeh${x}`);
+  let addabs=document.getElementById(`hamza${x}`);
   let icon=document.getElementById(`icons${x}`);
   
   addabs.textContent= (parseInt(addabs.textContent) + 1);
@@ -276,7 +276,7 @@ localStorage.setItem('tableData',updatesol);
    return get.textContent;
   }
   
-  function hamzeh(){
+  function add(){
     location.reload();
   }
 
@@ -338,3 +338,9 @@ function getCurrentDateTime() {
   const formattedDate = currentDate.toLocaleString('en-US', options);
   return formattedDate;
 }
+
+function logout(){
+  localStorage.clear();
+  window.location.replace("loginPage.html");
+}
+
