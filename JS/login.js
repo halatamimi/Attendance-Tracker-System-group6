@@ -27,8 +27,8 @@ function onclick_function() {
 
 
     // Define the admin admin and password
-    var adminEmail = "abood@abood.com";
-    var adminPassword = "123";
+    var adminEmail = "abood@admin.com";
+    var adminPassword = "123456";
 
     var calert=document.getElementById('alret');
     var cont="";
@@ -65,7 +65,7 @@ function onclick_function() {
         else 
         {
             //not an admin->user,someOne else 
-             window.location.assign('trainees.html');
+           //  window.location.assign('');
             //check if the email exist
             if(isKeyExist(email))
             {
@@ -75,7 +75,7 @@ function onclick_function() {
                 {
                     //user
                     window.sessionStorage.setItem(email,password);
-                    //window.location.assign('');
+                    window.location.assign('news.html');
                 }
                 else
                 {
