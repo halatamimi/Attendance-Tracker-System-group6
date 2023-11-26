@@ -1,57 +1,48 @@
 
+function createAccount(event) {
+    event.preventDefault();
 
-// Load existing trainers from local storage
-let trainersData = JSON.parse(localStorage.getItem('trainers')) || [];
+    var fullName = document.getElementById('fullname').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var password = document.getElementById('password').value.trim();
 
-// Function to save trainers to local storage
-function saveToLocalStorage() {
-    localStorage.setItem('trainers', JSON.stringify(trainersData));
-}
+    var alertMessage = document.getElementById('alert');
+    var alertContent = "";
+    var isValid = true;
 
-// Function to render trainers list
-function renderTrainersList() {
-    let trainersListContainer = document.querySelector('.trainers-list');
-    trainersListContainer.innerHTML = '';
+    // Basic email validation using regex
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    trainersData.forEach((trainer, index) => {
-        let listItem = document.createElement('div');
-        listItem.innerHTML = `
-            <p>${trainer.fullName} - ${trainer.email}</p>
-            <button onclick="editTrainer(${index})">Edit</button>
-            <button onclick="deleteTrainer(${index})">Delete</button>
-        `;
-        trainersListContainer.appendChild(listItem);
-    });
-}
-
-// Function to add a new trainer
-document.getElementById('addbtn').addEventListener('click', function() {
-    let fullName = document.getElementById('fullname').value;
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
-
-    if (fullName.trim() === '' || email.trim() === '' || password.trim() === '') {
-        alert('Please fill in all fields.');
-        return;
+    if (!fullName || !email || !password) {
+        isValid = false;
+        alertContent = "All fields are required";
+    } else if (!emailRegex.test(email)) {
+        isValid = false;
+        alertContent = "Invalid email address";
+    } else {
+        // Check if the email already exists in localStorage
+        if (isEmailExists(email)) {
+            isValid = false;
+            alertContent = "Email already exists. Please choose a different email.";
+        } else {
+            // Save the user information to localStorage
+            saveUserToLocalStorage(email, password);
+            alertContent = "Account created successfully!";
+       
+        }
     }
 
-    let newTrainer = {
-        fullName: fullName,
-        email: email,
-        password: password
-    };
+    if (!isValid) {
+        alertMessage.innerHTML = alertContent;
+    }
+}
 
-    trainersData.push(newTrainer);
+function isEmailExists(email) {
+    return localStorage.getItem(email) !== null;
+}
 
-    // Save to local storage and render the updated list
-    saveToLocalStorage();
-    renderTrainersList();
-
-    // Clear input fields
-    document.getElementById('fullname').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('password').value = '';
-
-    alert('Trainer added successfully.');
-});
+function saveUserToLocalStorage(email, password) {
+    localStorage.setItem(email, password);
+    
+}
 
