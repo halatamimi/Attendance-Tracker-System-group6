@@ -44,10 +44,14 @@
                             
                  </header>
                  <div class="crud">
-                        <input type="text" neme="name" id="fullname" placeholder="Ful name" class="input" required>
+                         <form onsubmit="createAccount(event)">
+                        <input type="text" name="name" id="fullname" placeholder="Full name" class="input" required>
                         <input type="email" name="email" id="email" placeholder="Email" class="input" required>
                         <input type="password" name="password" id="password" placeholder="Password" class="input" required>
-                        <button class="Addbtn" id="addbtn">Add</button>
+                        <button type="submit" class="Addbtn">Create Account</button>
+                        <p id="alert" style="color:red;"></p>
+                    </form>
+                 </div>
 
         </div>
         
