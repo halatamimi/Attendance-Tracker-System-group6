@@ -1,5 +1,7 @@
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,31 +55,30 @@
     <div class="info">
 
         <div class="group-input">
-           <label for="firstName">First Name:</label><br>
-           <input type="text" id="firstName" name="firstName" oninput="saveChanges()" required >
+           <label for="firstName">First Name:</label><br><br>
+           <input type="text" id="firstName" name="firstName"required >
         </div>
 
         <div class="group-input">
-           <label for="lastName">Last Name:</label><br>
-           <input type="text" id="lastName" name="lastName" oninput="saveChanges()" required>
+           <label for="lastName">Last Name:</label><br><br>
+           <input type="text" id="lastName" name="lastName"  required>
         </div>
 
         <div class="group-input">
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" oninput="saveChanges()" required>
+            <label for="email">Email:</label><br><br>
+            <input type="email" id="email" name="email" required>
         </div>
 
         <div class="group-input">
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" oninput="saveChanges()" required>
+            <label for="password">Password:</label><br><br>
+            <input type="password" id="password" name="password" required>
         </div>
             <button type="button" id="edit" onclick="editProfile()"><i class="fa-regular fa-pen-to-square"></i></button>
             <button type="submit" id="saveBtn"  onclick="saveChanges()"  style="display: none;"><i class="fa-solid fa-bookmark"></i></button>
     </div>
    </div>
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="js/profile.js"></script>
 </html>
-
-
