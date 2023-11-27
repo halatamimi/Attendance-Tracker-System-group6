@@ -50,8 +50,9 @@ label{
     pointer-events: none;
     transition: 0.6s;
     margin-top: 50px;
-    color: #7bcab9;
-    font-size: 18px;
+    /* color: #7bcab9; */
+    color: #004138;
+    font-size: 20px;
 }
 
 input{
@@ -71,7 +72,7 @@ input{
 
 .group-input input:focus~label,
 .group-input input:valid~label {
-    top: 5px;
+    top: -5px;
 }
 /* .group-input, input:hover{
     transition: all 0.5s ease;
@@ -80,7 +81,7 @@ input{
 } */
 button{
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 17px;
     margin-bottom: 8px;
     margin-left: 160px;
     background-color: #004138;
@@ -91,9 +92,21 @@ button{
     cursor: pointer;
 }
 button:hover{
-    background-color: #7bcab9;
+    background-color: #359E88;
 }
 
+.title,
+.text
+{
+    color: #004138;
+}
+.icon,
+.icon1{
+    color: #359E88;
+}
+.btn{
+    background-color: #359E88;
+}
 @media only screen and (max-width: 600px) {
     .profile-card {
         width: 90%;
