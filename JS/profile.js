@@ -89,19 +89,35 @@ function saveChanges() {
     localStorage.setItem('email', email);
     localStorage.setItem('password', password);
 
-    // You can also display a success message or perform other actions if needed
 
+    Swal.fire({
+        icon:'success',
+        title:'Changes saved successfully!',
+        showConfirmButton:false,
+        timer:1500,
+        customClass:{
+            title:'title',
+            icon:'icon',
+        },
+    });
     // Hide the save button after saving changes
     document.getElementById('saveBtn').style.display = 'none';
-    console.log('values added')
 }
 
 // Function to enable the input fields for editing
 function editProfile() {
+    Swal.fire({
+        icon:'question',
+        text:'Do you want the edit of data ?',
+        customClass:{
+            icon:'icon1',
+            text:'text',
+            button:'btn',
+        },
+    });
     // Show the save button
     document.getElementById('saveBtn').style.display = 'block';
     document.getElementById('edit').style.display='none';
-
     // You can also add additional logic if needed
 }
 
